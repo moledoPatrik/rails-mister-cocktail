@@ -1,9 +1,16 @@
+require 'open-uri'
+require 'json'
+
+ingredients_api = 'https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list'
+ingredients = URI.open(ingredients_api).read
+parsed_ingredients = JSON.parse(ingredients)
+
 puts "Destroying ingredients..."
 Ingredient.destroy_all
 
 puts "Creating new ingredients"
-Ingredient.create(name: "lemon")
-Ingredient.create(name: "ice")
-Ingredient.create(name: "mint leaves")
+parsed_ingredients['drinks'].each do |ingredient|
+  Ingredient.create(name: ingredient["strIngredient1"])
+end
 
 puts "Created #{Ingredient.count} ingredients!"
