@@ -6,13 +6,13 @@ class DosesController < ApplicationController
   end
 
   def create
-    @cocktail = Cocktail.find(params[:cocktail_id])
-    @ingredients = Ingredient.all
-    @ingredient = Ingredient.find(params[:dose][:ingredient_id])
-    @dose = Dose.new(dose_params)
+    @dose = Dose.new(dose_description)
+    @ingredient = Ingredient.find(dose_ingredient[:ingredient_id])
     @dose.ingredient = @ingredient
+    @cocktail = Cocktail.find(params[:cocktail_id])
+    @dose.cocktail = @cocktail
     if @dose.save
-      redirect_to cocktail_path(params[:cocktail_id])
+      redirect_to cocktail_path(@cocktail)
     else
       render :new, status: :unprocessable_entity
     end
@@ -20,7 +20,11 @@ class DosesController < ApplicationController
 
   private
 
-  def dose_params
+  def dose_description
     params.require(:dose).permit(:description)
+  end
+
+  def dose_ingredient
+    params.require(:dose).permit(:ingredient_id)
   end
 end

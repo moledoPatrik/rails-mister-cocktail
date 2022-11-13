@@ -1,0 +1,19 @@
+.nav {
+  background-color: $custom-white;
+  height: 8vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  a {
+    text-decoration: none;
+  }
+  .nav-home {
+    color: $custom-pink;
+    margin-left: 40px;
+    font-size: 40px;
+  }
+  .nav-add {
+    color: $custom-black;
+    margin-right: 40px;
+  }
+}

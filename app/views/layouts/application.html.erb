@@ -11,9 +11,11 @@
   </head>
 
   <body>
-  <nav>
-    <%= link_to 'Home', cocktails_path %>
-    <%= link_to 'Add cocktail', new_cocktail_path %>
+  <nav class="nav">
+    <%= link_to cocktails_path, class: 'nav-home' do %>
+      <i class="fa-solid fa-martini-glass-citrus"></i>
+    <% end %>
+    <%= link_to 'Add cocktail', new_cocktail_path, class: 'nav-add' %>
   </nav>
     <%= yield %>
   </body>

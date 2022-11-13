@@ -7,6 +7,14 @@
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome";
 
-// Your CSS partials
-@import "components/index";
-@import "pages/index";
+// // Your CSS partials
+// @import "components/index";
+// @import "pages/index";
+@import "custom-components/index";
+
+body {
+  background-color: $custom-black;
+  h1 {
+    color: $custom-pink
+  }
+}
