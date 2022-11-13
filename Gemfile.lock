@@ -109,6 +109,7 @@ GEM
       sassc (~> 2.0)
     globalid (1.0.0)
       activesupport (>= 5.0)
+    htmlbeautifier (1.4.2)
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
     io-console (0.5.11)
@@ -140,8 +141,6 @@ GEM
       net-protocol
     nio4r (2.5.8)
     nokogiri (1.13.9-arm64-darwin)
-      racc (~> 1.4)
-    nokogiri (1.13.9-x86_64-linux)
       racc (~> 1.4)
     pg (1.4.4)
     public_suffix (5.0.0)
@@ -254,7 +253,6 @@ GEM
 
 PLATFORMS
   arm64-darwin-21
-  x86_64-linux
 
 DEPENDENCIES
   autoprefixer-rails
@@ -263,6 +261,7 @@ DEPENDENCIES
   debug
   dotenv-rails
   font-awesome-sass (~> 6.1)
+  htmlbeautifier
   jbuilder
   jsbundling-rails
   pg (~> 1.1)
